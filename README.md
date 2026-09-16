@@ -89,6 +89,14 @@ Files using those features will either fail to parse (raising
 `yamlfmt.YamlFormatError`) or be normalized incorrectly. See the roadmap for
 what's planned.
 
+## Running the tests
+
+The test suite uses only the standard library:
+
+```sh
+python -m unittest discover
+```
+
 ## License
 
 MIT, see LICENSE.
