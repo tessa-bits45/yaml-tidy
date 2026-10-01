@@ -73,6 +73,11 @@ with the `yamlfmt` executable in place of `python -m yamlfmt`.
 - Boolean spelling (`yes`/`no`/`True`/`False` -> `true`/`false`).
 - Trailing whitespace and inconsistent line endings.
 
+Comments are kept. A comment on its own line stays above the key or list
+item that followed it, and a comment at the end of a line stays on that line
+(separated by two spaces). Comments after the last entry stay at the end of
+the file. Blank lines are not preserved.
+
 ## Current limitations
 
 This is an early version. It handles plain block-style mappings and
@@ -83,7 +88,6 @@ yet support:
 - Multi-line block scalars (`|` and `>`)
 - Anchors and aliases (`&anchor`, `*alias`)
 - Multiple documents in one file (`---` separators)
-- Comments - they are stripped during formatting, not preserved
 
 Files using those features will either fail to parse (raising
 `yamlfmt.YamlFormatError`) or be normalized incorrectly. See the roadmap for
